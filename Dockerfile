@@ -1,5 +1,5 @@
 FROM prom/node-exporter:v0.18.1 as exporter
-FROM homecentr/base:1.0.0 as base
+FROM homecentr/base:1.1.0 as base
 
 FROM alpine:3.11.3
 
