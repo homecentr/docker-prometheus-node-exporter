@@ -4,3 +4,13 @@ services:
     build: .
     image: homecentr/prometheus-node-exporter
     restart: unless-stopped
+    environment:
+      NODE_ID: "myserver"
+      NODE_EXPORTER_ARGS: "--path.sysfs=/host/sys --path.procfs=/host/proc --collector.textfile.directory=/etc/node-exporter/ --collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($$|/) --no-collector.ipvs"
+    ports:
+      - 9100:9100
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+      - /etc/hostname:/etc/nodename
