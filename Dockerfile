@@ -1,15 +1,12 @@
-ARG NODE_EXPORTER_VERSION=v0.18.1
-
-FROM prom/node-exporter:$NODE_EXPORTER_VERSION as exporter
+FROM prom/node-exporter:v0.18.1 as exporter
 FROM homecentr/base:1.0.0 as base
 
 FROM alpine:3.11.3
 
-ARG NODE_EXPORTER_VERSION
 ENV NODE_EXPORTER_ARGS=""
 
 LABEL maintainer="Lukas Holota <me@lholota.com>"
-LABEL org.homecentr.dependency-version=$NODE_EXPORTER_VERSION
+LABEL org.homecentr.dependency-version=v0.18.1
 
 RUN apk add --no-cache \
     shadow=4.7-r1 \
