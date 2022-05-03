@@ -1,6 +1,6 @@
 FROM prom/node-exporter:v1.0.1 as exporter
 
-FROM homecentr/base:2.4.3-alpine
+FROM homecentr/base:3.4.1-alpine
 
 ENV NODE_EXPORTER_ARGS=""
 
