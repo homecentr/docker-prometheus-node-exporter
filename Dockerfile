@@ -1,4 +1,4 @@
-FROM prom/node-exporter:v1.0.1 as exporter
+FROM prom/node-exporter:v1.4.0 as exporter
 
 FROM homecentr/base:2.4.3-alpine
 
